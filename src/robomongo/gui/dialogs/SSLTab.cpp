@@ -30,9 +30,17 @@ namespace {
 namespace Robomongo
 {
     SSLTab::SSLTab(ConnectionSettings *settings) 
-        //: _settings(settings)
+        : _settings(settings)
     {
+        //SslSettings *sslSettings = settings->sslSettings();
+        _useSslCheckBox = new QCheckBox("Use SSL protocol");
+        _useSslCheckBox->setStyleSheet("margin-bottom: 7px");
+        //_sshSupport->setChecked(sslSettings->enabled());
 
+        QVBoxLayout *mainLayout = new QVBoxLayout;
+        mainLayout->addWidget(_useSslCheckBox);
+        //mainLayout->addLayout(connectionLayout);
+        setLayout(mainLayout);
     }
 
 }

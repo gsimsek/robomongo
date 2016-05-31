@@ -25,6 +25,8 @@ namespace Robomongo
         SSLTab(ConnectionSettings *settings);
 
     private:
+        QCheckBox *_useSslCheckBox;
 
+        ConnectionSettings *const _settings;
     };
 }
