@@ -12,6 +12,7 @@
 #include <QMessageBox>
 #include <QFileInfo>
 #include <QFrame>
+#include <QRadioButton>
 
 #include "robomongo/core/utils/QtUtils.h"
 #include "robomongo/gui/utils/ComboBoxUtils.h"
@@ -36,9 +37,13 @@ namespace Robomongo
         _useSslCheckBox = new QCheckBox("Use SSL protocol");
         _useSslCheckBox->setStyleSheet("margin-bottom: 7px");
         //_sshSupport->setChecked(sslSettings->enabled());
+        _acceptSelfSignedButton = new QRadioButton("Accept self-signed certificates");
+        _useRootCaFileButton = new QRadioButton("Use own Root CA file ( --sslCAFile )");
 
         QVBoxLayout *mainLayout = new QVBoxLayout;
         mainLayout->addWidget(_useSslCheckBox);
+        mainLayout->addWidget(_acceptSelfSignedButton);
+        mainLayout->addWidget(_useRootCaFileButton);
         //mainLayout->addLayout(connectionLayout);
         setLayout(mainLayout);
     }
